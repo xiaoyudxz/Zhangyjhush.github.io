@@ -489,7 +489,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    353
+                    430
                 </div>
                 
 
@@ -514,6 +514,55 @@
             <div id="articleContent">
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>设计模式是一套用来提高代码可复用性、可维护性、可读性、稳健性以及安全性的解决方案，文章使用CSharp进行编写。</p>
 <h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式指的是<b>确保每个类只有一个实例，并提供一个全局访问点</b><br>在系统中某个对象只需要一个实例的时候，例如操作系统中只能有一个任务管理器,操作文件时,同一时间内只允许一个实例对其操作，这时候就可以使用单例模式。</p>
+<blockquote>
+<p>下表为各种单例实现的比较</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">线程安全</th>
+<th align="center">并发性能好</th>
+<th align="center">可延迟加载</th>
+<th align="center">序列化/反序列化安全</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>饿汉式</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+<td align="center">$\times$</td>
+</tr>
+<tr>
+<td>懒汉式</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+</tr>
+<tr>
+<td>双重锁定</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+</tr>
+<tr>
+<td>静态内部类</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+</tr>
+<tr>
+<td>枚举</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\checkmark$</td>
+<td align="center">$\times$</td>
+<td align="center">$\checkmark$</td>
+</tr>
+</tbody></table>
 <h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><p>饿汉式的单例实现<code>instance</code>在类被加载的时候初始化</p>
 <pre class="line-numbers language-CSharp"><code class="language-CSharp">internal class Singleton1
 {
@@ -573,7 +622,7 @@
         }
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3>
             </div>
             <hr />
 
@@ -1205,7 +1254,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">2k</span>
+            <span class="white-color">2.1k</span>
             
 
             <br>

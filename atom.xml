@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="zhangyjhush.github.io/"/>
-  <updated>2020-04-05T02:43:43.000Z</updated>
+  <updated>2020-06-09T11:48:17.209Z</updated>
   <id>zhangyjhush.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>23种设计模式的Csharp实现</title>
+    <link href="zhangyjhush.github.io/2020/06/09/designpattern/"/>
+    <id>zhangyjhush.github.io/2020/06/09/designpattern/</id>
+    <published>2020-06-09T10:54:11.000Z</published>
+    <updated>2020-06-09T11:48:17.209Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;设计模式是一套用来提高代码可复用性、可维护性、可读性、稳健性以及安全性的解决方案，文章使用CSharp进行编写。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="软件开发" scheme="zhangyjhush.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="设计模式" scheme="zhangyjhush.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="CSharp" scheme="zhangyjhush.github.io/tags/CSharp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>十大经典排序算法整理汇总（附代码）</title>
     <link href="zhangyjhush.github.io/2020/02/16/sort-algorithms/"/>
     <id>zhangyjhush.github.io/2020/02/16/sort-algorithms/</id>
     <published>2020-02-16T07:09:23.000Z</published>
-    <updated>2020-04-05T02:43:43.000Z</updated>
+    <updated>2020-06-09T10:55:16.725Z</updated>
     
     <summary type="html">
     

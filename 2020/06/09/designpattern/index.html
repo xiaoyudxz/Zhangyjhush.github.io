@@ -489,14 +489,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    539
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -622,7 +622,51 @@
         }
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3>
+<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3><p>第一次加载Singleton类时不会初始化instance，在获取Instance时将会初始化instance<br>这种方法是线程安全的。</p>
+<pre class="line-numbers language-CSharp"><code class="language-CSharp">internal class Singleton4
+{
+    public static Singleton4 Instance
+    {
+        get
+        {
+            return SingletonHolder.instance;
+        }
+    }
+
+    private Singleton4()
+    {
+
+    }
+
+    private static class SingletonHolder
+    {
+        internal static Singleton4 instance = new Singleton4();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><p>在<code>Extensions</code>中可以为INSTANCE添加方法，默认是线程安全的。</p>
+<pre class="line-numbers language-CSharp"><code class="language-CSharp">public enum SingletonEnum
+{
+    INSTANCE
+}
+
+public static class Extensions
+{
+    public static void DoSomething(this SingletonEnum singletonEnum)
+    {
+        Console.WriteLine("test");
+    }
+}
+
+/// <summary>
+/// 测试
+/// </summary>
+static void Main(string[] args)
+{
+   SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
+   singletonEnum.DoSomething();
+   Console.ReadLine();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1254,7 +1298,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">2.1k</span>
+            <span class="white-color">2.2k</span>
             
 
             <br>

@@ -489,14 +489,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    674
+                    859
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
                 
@@ -657,15 +657,12 @@ public static class Extensions
     }
 }
 
-/// <summary>
-/// 测试
-/// </summary>
 static void Main(string[] args)
 {
    SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
    singletonEnum.DoSomething();
    Console.ReadLine();
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><p>类似于<code>C++</code>的拷贝构造函数，但对于拷贝构造函数而言，生成的新对象只能是类本身。也就是说对于一个指向派生类的基类指针，我们无法依靠拷贝构造函数去克隆一个派生类对象。</p>
 <pre class="line-numbers language-CSharp"><code class="language-CSharp">internal abstract class Cloneable
 {
@@ -692,7 +689,55 @@ internal class Prototype : Cloneable
         return temp;
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><p>工厂方法模式主要由一下几部分组成</p>
+<ol>
+<li>抽象工厂(<code>Abstract Factory</code>):提供创建产品的接口，调用者通过它访问具体工厂的方法<code>NewProduct()</code>来创建产品。</li>
+<li>具体工厂(<code>Concrete Factory</code>):实现抽象工厂中的抽象方法，完成具体产品的创建。</li>
+<li>抽象产品(<code>Product</code>):定义产品的规范，描述产品的基本功能。</li>
+<li>具体产品(<code>Concrete Product</code>):实现抽象产品所定义的接口，由具体工厂来创建，与工厂间为一一对应关系。</li>
+</ol>
+<pre class="line-numbers language-CSharp"><code class="language-CSharp">internal interface Product
+{
+    void Show();
+}
+
+internal class Product1 : Product
+{
+    public void Show()
+    {
+        Console.WriteLine("Product1");
+    }
+}
+
+internal class Product2 : Product
+{
+    public void Show()
+    {
+        Console.WriteLine("Product2");
+    }
+}
+
+internal interface AbstractFactory
+{
+    Product NewProduct();
+}
+
+internal class Factory1 : AbstractFactory
+{
+    public Product NewProduct()
+    {
+        return new Product1();
+    }
+}
+
+internal class Factory2 : AbstractFactory
+{
+    public Product NewProduct()
+    {
+        return new Product2();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
             </div>
             <hr />
 
@@ -1325,7 +1370,7 @@ internal class Prototype : Cloneable
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">674</span>
+            <span class="white-color">859</span>
             
 
             <br>
